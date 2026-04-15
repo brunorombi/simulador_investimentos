@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import CapturaDados from './CapturaDados';
+
 function App() {
 
   return (
@@ -8,6 +10,7 @@ function App() {
       <div className='row justify-content-center align-items-center'>
         <div className='col-12'>
           Hello, Investimentos
+          <CapturaDados/>
         </div>
         <div className='col-12'>
 
