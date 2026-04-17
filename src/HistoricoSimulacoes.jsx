@@ -9,7 +9,7 @@ const HistoricoSimulacoes = ({
         <div className='p-3 mt-4'>
             <div className='d-flex justify-content-between align-items-center'>
                 <h3>Histórico de simulações</h3>
-                <p className='m-0'>4 simulações</p>
+                <p className='m-0'>{historicoSimulacoes.length} simulações</p>
             </div>
             <div>
                 <ul className='list-unstyled p-0 rounded-3 border'>
@@ -23,7 +23,7 @@ const HistoricoSimulacoes = ({
                             className='d-flex justify-content-between align-items-center p-3 border-bottom'
                         >
                             <span>{item.data}</span>
-                            <strong>{item.valorFinal}</strong>
+                            <strong>R$ {item.valorFinal}</strong>
                         </li>
                     ))}
                 </ul>

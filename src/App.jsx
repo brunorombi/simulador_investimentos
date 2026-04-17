@@ -17,10 +17,7 @@ function App() {
   const [numeroDeAportes, setNumeroDeAportes] = useState('');
   const [rentabilidade, setRentabilidade] = useState('');
 
-  const historicoSimulacoes = [{
-    data: new Date().toLocaleDateString('pt-BR'),
-    valorFinal: 1000
-  }];
+  const [historicoSimulacoes, setHistoricoSimulacoes] = useState([]);
 
   const resetaValores = function () {
     setValorInicial('');
@@ -65,8 +62,8 @@ function App() {
       data: data.toLocaleString('pt-BR'),
       valorFinal: montante.toFixed(2)
     }
-
-    historicoSimulacoes.unshift(simulacao);
+    console.log(simulacao.data);
+    setHistoricoSimulacoes((prev) => [simulacao, ...prev]);
   }
 
   return (
