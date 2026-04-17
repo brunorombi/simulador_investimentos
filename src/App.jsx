@@ -10,11 +10,30 @@ function App() {
   const [taxaDeJuros, setTaxaDeJuros] = useState('');
   const [periodo, setPeriodo] = useState('');
 
+  const [valorFinal, setValorFinal] = useState('');
+  const [totalInvestido, setTotalInvestido] = useState('');
+  const [jurosAcumulados, setJurosAcumulados] = useState('');
+  const [numeroDeAportes, setNumeroDeAportes] = useState('');
+  const [rentabilidade, setRentabilidade] = useState('');
+
   const resetaValores = function() {
     setValorInicial('');
     setAporteMensal('');
     setTaxaDeJuros('');
     setPeriodo('');
+    setValorFinal('');
+    setTotalInvestido('');
+    setJurosAcumulados('');
+    setNumeroDeAportes('');
+    setRentabilidade('');
+  }
+
+  const calculaValores = function() {
+    setValorFinal(valorInicial);
+    setTotalInvestido(valorInicial * 2);
+    setJurosAcumulados(valorInicial * 3);
+    setNumeroDeAportes(aporteMensal);
+    setRentabilidade(valorInicial * 4);
   }
 
 
@@ -33,10 +52,17 @@ function App() {
             periodo={periodo}
             setPeriodo={setPeriodo}
             resetaValores={resetaValores}
+            calculaValores={calculaValores}
           />
         </div>
         <div className='col-12'>
-          <ExibeDados/>
+          <ExibeDados
+            valorFinal={valorFinal}
+            totalInvestido={totalInvestido}
+            jurosAcumulados={jurosAcumulados}
+            numeroDeAportes={numeroDeAportes}
+            rentabilidade={rentabilidade}
+          />
         </div>
         <div className='col-12'>
 

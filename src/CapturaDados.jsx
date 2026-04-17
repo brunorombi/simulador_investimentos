@@ -9,7 +9,8 @@ const CapturaDados = ({
     setTaxaDeJuros,
     periodo,
     setPeriodo,
-    resetaValores}) => {
+    resetaValores,
+    calculaValores}) => {
 
     useEffect(() => {
         console.log(`valor inicial ${valorInicial || 0}, aporte mensal ${aporteMensal || 0}, taxa de juros ${taxaDeJuros || 0}, periodo ${periodo || 0}`);
@@ -71,6 +72,7 @@ const CapturaDados = ({
                         <button
                             className="btn btn-primary w-100"
                             onClick={function(e) {
+                                calculaValores();
                                 e.preventDefault();
                             }}
                         >
