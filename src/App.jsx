@@ -2,7 +2,8 @@ import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import CapturaDados from './CapturaDados';
-import ExibeDados from './ExibeDados'; 
+import ExibeDados from './ExibeDados';
+import HistoricoSimulacoes from './HistoricoSimulacoes'; 
 
 function App() {
   const [valorInicial, setValorInicial] = useState('');
@@ -83,7 +84,9 @@ function App() {
           />
         </div>
         <div className='col-12'>
-
+          <HistoricoSimulacoes
+          
+          />
         </div>
       </div>
     </div>  
