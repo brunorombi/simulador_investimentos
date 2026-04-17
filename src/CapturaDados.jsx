@@ -67,7 +67,7 @@ const CapturaDados = ({
                     </div>
                 </div>
 
-                <div className="row mt-3 g-3">
+                <div className="row mt-3">
                     <div className="col-9">
                         <button
                             className="btn btn-primary w-100"

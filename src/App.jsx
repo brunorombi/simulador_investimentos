@@ -70,7 +70,7 @@ function App() {
     <div className='container' style={{ maxWidth: 900 }}>
       <div className='row justify-content-center align-items-center'>
         <div className='col-12'>
-          Hello, Investimentos
+          <h1 className='text-center p-3'>Hello, Investimentos</h1>
           <CapturaDados
             valorInicial={valorInicial}
             setValorInicial={setValorInicial}
