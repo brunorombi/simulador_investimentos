@@ -10,7 +10,7 @@ const CapturaDados = ({
     periodo,
     setPeriodo,
     resetaValores,
-    calculaValores}) => {
+    calculaValores }) => {
 
     useEffect(() => {
         console.log(`valor inicial ${valorInicial || 0}, aporte mensal ${aporteMensal || 0}, taxa de juros ${taxaDeJuros || 0}, periodo ${periodo || 0}`);
@@ -22,9 +22,9 @@ const CapturaDados = ({
                 <div className='row g-3'>
                     <div className='col-md-6'>
                         <label className='mb-2'>Valor Inicial (R$)</label>
-                        <input 
+                        <input
                             type="number"
-                            className="form-control" 
+                            className="form-control"
                             value={valorInicial}
                             required
                             min="0"
@@ -33,20 +33,20 @@ const CapturaDados = ({
                     </div>
                     <div className='col-md-6'>
                         <label className='mb-2'>Aporte Mensal (R$)</label>
-                        <input 
-                            type="number" 
+                        <input
+                            type="number"
                             className="form-control"
                             required
                             min="0"
                             value={aporteMensal}
-                            onChange={(e) => setAporteMensal(e.target.value)}   
+                            onChange={(e) => setAporteMensal(e.target.value)}
                         />
                     </div>
 
                     <div className='col-md-6'>
                         <label className='mb-2'>Taxa de juros (% ao mês)</label>
-                        <input 
-                            type="number" 
+                        <input
+                            type="number"
                             step="0.01"
                             min="0"
                             max="100"
@@ -57,10 +57,10 @@ const CapturaDados = ({
                     </div>
                     <div className='col-md-6'>
                         <label className='mb-2'>Período (meses)</label>
-                        <input 
-                            type="number" 
-                            min="1" 
-                            className="form-control" 
+                        <input
+                            type="number"
+                            min="1"
+                            className="form-control"
                             value={periodo}
                             onChange={(e) => setPeriodo(e.target.value)}
                         />
@@ -71,7 +71,7 @@ const CapturaDados = ({
                     <div className="col-9">
                         <button
                             className="btn btn-primary w-100"
-                            onClick={function(e) {
+                            onClick={function (e) {
                                 calculaValores();
                                 e.preventDefault();
                             }}
@@ -81,9 +81,9 @@ const CapturaDados = ({
                     </div>
 
                     <div className="col-3">
-                        <button 
+                        <button
                             className="btn btn-secondary w-100"
-                            onClick={function(e) {
+                            onClick={function (e) {
                                 e.preventDefault();
                                 resetaValores();
                             }}

@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import CapturaDados from './CapturaDados';
 import ExibeDados from './ExibeDados';
-import HistoricoSimulacoes from './HistoricoSimulacoes'; 
+import HistoricoSimulacoes from './HistoricoSimulacoes';
 
 function App() {
   const [valorInicial, setValorInicial] = useState('');
@@ -17,7 +17,12 @@ function App() {
   const [numeroDeAportes, setNumeroDeAportes] = useState('');
   const [rentabilidade, setRentabilidade] = useState('');
 
-  const resetaValores = function() {
+  const historicoSimulacoes = [{
+    data: new Date().toLocaleDateString('pt-BR'),
+    valorFinal: 1000
+  }];
+
+  const resetaValores = function () {
     setValorInicial('');
     setAporteMensal('');
     setTaxaDeJuros('');
@@ -29,7 +34,7 @@ function App() {
     setRentabilidade('');
   }
 
-  const calculaValores = function() {
+  const calculaValores = function () {
     const vi = Number(valorInicial);
     const pmt = Number(aporteMensal);
     const i = Number(taxaDeJuros) / 100;
@@ -54,10 +59,18 @@ function App() {
     setJurosAcumulados(juros.toFixed(2));
     setNumeroDeAportes(n);
     setRentabilidade(rent.toFixed(2));
+
+    const data = new Date();
+    const simulacao = {
+      data: data.toLocaleString('pt-BR'),
+      valorFinal: montante.toFixed(2)
+    }
+
+    historicoSimulacoes.unshift(simulacao);
   }
 
   return (
-    <div className='container' style={{maxWidth:900}}>
+    <div className='container' style={{ maxWidth: 900 }}>
       <div className='row justify-content-center align-items-center'>
         <div className='col-12'>
           Hello, Investimentos
@@ -85,11 +98,11 @@ function App() {
         </div>
         <div className='col-12'>
           <HistoricoSimulacoes
-          
+            historicoSimulacoes={historicoSimulacoes}
           />
         </div>
       </div>
-    </div>  
+    </div>
   )
 }
 

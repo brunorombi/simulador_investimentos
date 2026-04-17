@@ -5,7 +5,7 @@ const ExibeDados = ({
     totalInvestido,
     jurosAcumulados,
     numeroDeAportes,
-    rentabilidade}) => {
+    rentabilidade }) => {
     return (
         <div className='p-4 m-2 bg-light rounded-3'>
             <div className="row border-bottom mb-4">
