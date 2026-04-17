@@ -32,6 +32,21 @@ function App() {
   }
 
   const calculaValores = function () {
+    if (!valorInicial || !aporteMensal || !taxaDeJuros || !periodo) {
+      alert('Preencha todos os campos');
+      return;
+    }
+
+    if (Number(valorInicial) < 0 || Number(aporteMensal) < 0) {
+      alert('Valores não podem ser negativos');
+      return;
+    }
+
+    if (Number(periodo) <= 0) {
+      alert('Período Inválido');
+    }
+
+
     const vi = Number(valorInicial);
     const pmt = Number(aporteMensal);
     const i = Number(taxaDeJuros) / 100;
