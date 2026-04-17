@@ -12,10 +12,6 @@ const CapturaDados = ({
     resetaValores,
     calculaValores }) => {
 
-    useEffect(() => {
-        console.log(`valor inicial ${valorInicial || 0}, aporte mensal ${aporteMensal || 0}, taxa de juros ${taxaDeJuros || 0}, periodo ${periodo || 0}`);
-    }, [valorInicial, aporteMensal, taxaDeJuros, periodo]);
-
     return (
         <div className='p-3 mt-4'>
             <form>

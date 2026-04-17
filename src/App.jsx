@@ -44,6 +44,7 @@ function App() {
 
     if (Number(periodo) <= 0) {
       alert('Período Inválido');
+      return;
     }
 
 
@@ -77,7 +78,6 @@ function App() {
       data: data.toLocaleString('pt-BR'),
       valorFinal: montante.toFixed(2)
     }
-    console.log(simulacao.data);
     setHistoricoSimulacoes((prev) => [simulacao, ...prev]);
   }
 
