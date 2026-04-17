@@ -21,7 +21,7 @@ const CapturaDados = ({
             <form>
                 <div className='row g-3'>
                     <div className='col-md-6'>
-                        <label className='mb-2'>Valor Inicial</label>
+                        <label className='mb-2'>Valor Inicial (R$)</label>
                         <input 
                             type="number"
                             className="form-control" 
@@ -32,7 +32,7 @@ const CapturaDados = ({
                         />
                     </div>
                     <div className='col-md-6'>
-                        <label className='mb-2'>Aporte Mensal</label>
+                        <label className='mb-2'>Aporte Mensal (R$)</label>
                         <input 
                             type="number" 
                             className="form-control"
@@ -44,7 +44,7 @@ const CapturaDados = ({
                     </div>
 
                     <div className='col-md-6'>
-                        <label className='mb-2'>Taxa de juros</label>
+                        <label className='mb-2'>Taxa de juros (% ao mês)</label>
                         <input 
                             type="number" 
                             step="0.01"
@@ -56,7 +56,7 @@ const CapturaDados = ({
                         />
                     </div>
                     <div className='col-md-6'>
-                        <label className='mb-2'>Período</label>
+                        <label className='mb-2'>Período (meses)</label>
                         <input 
                             type="number" 
                             min="1" 

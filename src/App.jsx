@@ -29,13 +29,31 @@ function App() {
   }
 
   const calculaValores = function() {
-    setValorFinal(valorInicial);
-    setTotalInvestido(valorInicial * 2);
-    setJurosAcumulados(valorInicial * 3);
-    setNumeroDeAportes(aporteMensal);
-    setRentabilidade(valorInicial * 4);
-  }
+    const vi = Number(valorInicial);
+    const pmt = Number(aporteMensal);
+    const i = Number(taxaDeJuros) / 100;
+    const n = Number(periodo);
 
+    let montante = 0;
+
+    if (i === 0) {
+      montante = vi + pmt * n;
+    } else {
+      montante =
+        vi * Math.pow(1 + i, n) +
+        pmt * ((Math.pow(1 + i, n) - 1) / i);
+    }
+
+    const total = vi + pmt * n;
+    const juros = montante - total;
+    const rent = total > 0 ? (juros / total) * 100 : 0;
+
+    setValorFinal(montante.toFixed(2));
+    setTotalInvestido(total.toFixed(2));
+    setJurosAcumulados(juros.toFixed(2));
+    setNumeroDeAportes(n);
+    setRentabilidade(rent.toFixed(2));
+  }
 
   return (
     <div className='container' style={{maxWidth:900}}>
